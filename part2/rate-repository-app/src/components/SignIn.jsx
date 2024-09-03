@@ -54,7 +54,7 @@ const SignInForm = ({ onSubmit }) => {
                 )}
             </View>
             <Pressable style={styles.button} onPress={formik.handleSubmit}>
-                <Text style={styles.buttonText}>Sign in</Text>
+                <Text style={styles.text}>Sign in</Text>
             </Pressable>
         </View>
     );
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         alignItems: 'center',
     },
-    buttonText: {
+    text: {
         color: 'white',
         fontSize: 18,
         fontWeight: theme.fontWeights.bold,
