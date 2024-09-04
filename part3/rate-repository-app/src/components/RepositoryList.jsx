@@ -1,5 +1,4 @@
 import { StyleSheet, FlatList, View } from 'react-native';
-import Text from './Text';
 import RepositoryItem from './RepositoryItem';
 import useRepositories from '../hooks/useRepositories';
 
