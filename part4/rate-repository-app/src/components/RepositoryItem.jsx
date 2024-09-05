@@ -14,6 +14,7 @@ const RepositoryItem = ({ repository, isSingleRepositoryView }) => {
 
     if (isSingleRepositoryView) {
         const { data, loading } = useQuery(GET_REPOSITORY, {
+            fetchPolicy: 'cache-and-network',
             variables: { id: id },
         });
 

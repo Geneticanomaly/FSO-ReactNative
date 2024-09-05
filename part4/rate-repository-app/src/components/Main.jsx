@@ -4,8 +4,9 @@ import { Route, Routes, Navigate } from 'react-router-native';
 import RepositoryList from './RepositoryList';
 import AppBar from './AppBar';
 import SignIn from './SignIn';
-import RepositoryItem from './RepositoryItem';
 import SingleRepository from './SingleRepository';
+import ReviewForm from './ReviewForm';
+import CreateReview from './CreateReview';
 
 const styles = StyleSheet.create({
     container: {
@@ -23,6 +24,7 @@ const Main = () => {
                 <Route path="/" element={<RepositoryList />} />
                 <Route path="/signIn" element={<SignIn />} />
                 <Route path="/repository/:id" element={<SingleRepository />} />
+                <Route path="/repository/review" element={<CreateReview />} />
                 <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
         </View>

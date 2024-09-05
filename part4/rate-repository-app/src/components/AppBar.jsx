@@ -42,21 +42,28 @@ const AppBar = () => {
             <ScrollView horizontal>
                 <Pressable>
                     <Link to="/">
-                        <Text fontSize="heading" style={styles.text}>
+                        <Text fontSize="subheading" style={styles.text}>
                             Repositories
                         </Text>
                     </Link>
                 </Pressable>
                 <Pressable>
+                    <Link to="/repository/review">
+                        <Text fontSize="subheading" style={styles.text}>
+                            Create a review
+                        </Text>
+                    </Link>
+                </Pressable>
+                <Pressable>
                     <Link to="/signIn">
-                        <Text fontSize="heading" style={styles.text}>
+                        <Text fontSize="subheading" style={styles.text}>
                             Sign in
                         </Text>
                     </Link>
                 </Pressable>
                 {data?.me && (
                     <Pressable onPress={handleSignOut}>
-                        <Text fontSize="heading" style={styles.text}>
+                        <Text fontSize="subheading" style={styles.text}>
                             Sign out
                         </Text>
                     </Pressable>
