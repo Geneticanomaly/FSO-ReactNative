@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
 
 const ItemSeparator = () => <View style={styles.separator} />;
 
-const RepositoryListContainer = ({ repositories, selectedItem, setSelectedItem }) => {
+const RepositoryListContainer = ({ repositories, selectedItem, setSelectedItem, keyword, setKeyword }) => {
     const navigate = useNavigate();
 
     const repositoryNodes = repositories ? repositories.edges.map((edge) => edge.node) : [];
@@ -26,7 +26,12 @@ const RepositoryListContainer = ({ repositories, selectedItem, setSelectedItem }
                 data={repositoryNodes}
                 ItemSeparatorComponent={ItemSeparator}
                 ListHeaderComponent={
-                    <MenuComponent selectedItem={selectedItem} setSelectedItem={setSelectedItem} />
+                    <MenuComponent
+                        selectedItem={selectedItem}
+                        setSelectedItem={setSelectedItem}
+                        keyword={keyword}
+                        setKeyword={setKeyword}
+                    />
                 }
                 renderItem={({ item }) => (
                     <Pressable onPress={() => handlePress(item)}>

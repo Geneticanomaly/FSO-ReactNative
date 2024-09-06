@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     container: {
         flexGrow: 1,
         flexShrink: 1,
-        backgroundColor: '#D3D3D3',
+        backgroundColor: '#DCDCDC',
     },
 });
 

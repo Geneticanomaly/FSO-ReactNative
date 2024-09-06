@@ -1,13 +1,26 @@
-import { useState } from 'react';
 import { View, Pressable, StyleSheet } from 'react-native';
 import { List, Divider } from 'react-native-paper';
 import theme from '../theme';
+import { TextInput } from 'react-native-paper';
 
-const MenuComponent = ({ selectedItem, setSelectedItem }) => {
+const MenuComponent = ({ selectedItem, setSelectedItem, keyword, setKeyword }) => {
     return (
         <View style={{ width: '100%' }}>
+            <TextInput
+                style={{ marginTop: 10, marginLeft: 10, marginRight: 10 }}
+                mode="outlined"
+                placeholder="Type something"
+                value={keyword}
+                onChangeText={(text) => setKeyword(text)}
+                left={<TextInput.Icon icon="magnify" />}
+                right={<TextInput.Icon icon="close" onPress={() => setKeyword('')} />}
+            />
             <List.AccordionGroup>
-                <List.Accordion title={selectedItem} id="1">
+                <List.Accordion
+                    title={selectedItem}
+                    id="1"
+                    style={{ backgroundColor: '#DCDCDC', paddingLeft: 5 }}
+                >
                     <View
                         style={{
                             backgroundColor: 'white',

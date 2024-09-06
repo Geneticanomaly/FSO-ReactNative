@@ -4,13 +4,16 @@ import useRepositories from '../hooks/useRepositories';
 
 const RepositoryList = () => {
     const [selectedItem, setSelectedItem] = useState('Select an item...');
-    const { repositories } = useRepositories(selectedItem);
+    const [keyword, setKeyword] = useState('');
+    const { repositories } = useRepositories(selectedItem, keyword);
 
     return (
         <RepositoryListContainer
             repositories={repositories}
             selectedItem={selectedItem}
             setSelectedItem={setSelectedItem}
+            keyword={keyword}
+            setKeyword={setKeyword}
         />
     );
 };
