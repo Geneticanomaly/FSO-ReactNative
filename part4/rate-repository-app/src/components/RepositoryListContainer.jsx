@@ -1,6 +1,7 @@
 import { StyleSheet, FlatList, View, Pressable } from 'react-native';
 import RepositoryItem from './RepositoryItem';
 import { useNavigate } from 'react-router-native';
+import MenuComponent from './MenuComponent';
 
 const styles = StyleSheet.create({
     separator: {
@@ -10,7 +11,7 @@ const styles = StyleSheet.create({
 
 const ItemSeparator = () => <View style={styles.separator} />;
 
-const RepositoryListContainer = ({ repositories }) => {
+const RepositoryListContainer = ({ repositories, selectedItem, setSelectedItem }) => {
     const navigate = useNavigate();
 
     const repositoryNodes = repositories ? repositories.edges.map((edge) => edge.node) : [];
@@ -20,16 +21,21 @@ const RepositoryListContainer = ({ repositories }) => {
     };
 
     return (
-        <FlatList
-            data={repositoryNodes}
-            ItemSeparatorComponent={ItemSeparator}
-            renderItem={({ item }) => (
-                <Pressable onPress={() => handlePress(item)}>
-                    <RepositoryItem key={item.id} repository={item} isSingleRepositoryView={false} />
-                </Pressable>
-            )}
-            keyExtractor={(item) => item.id}
-        />
+        <View>
+            <FlatList
+                data={repositoryNodes}
+                ItemSeparatorComponent={ItemSeparator}
+                ListHeaderComponent={
+                    <MenuComponent selectedItem={selectedItem} setSelectedItem={setSelectedItem} />
+                }
+                renderItem={({ item }) => (
+                    <Pressable onPress={() => handlePress(item)}>
+                        <RepositoryItem key={item.id} repository={item} isSingleRepositoryView={false} />
+                    </Pressable>
+                )}
+                keyExtractor={(item) => item.id}
+            />
+        </View>
     );
 };
 
