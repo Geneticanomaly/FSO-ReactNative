@@ -85,6 +85,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         gap: 10,
         width: '100%',
+        marginBottom: 10,
     },
     header: {
         paddingLeft: 15,
