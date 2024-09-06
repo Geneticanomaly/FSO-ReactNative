@@ -56,6 +56,15 @@ const AppBar = () => {
                         </Link>
                     </Pressable>
                 )}
+                {data?.me && (
+                    <Pressable>
+                        <Link to={`/user/${data.me.id}/reviews`}>
+                            <Text fontSize="subheading" style={styles.text}>
+                                My reviews
+                            </Text>
+                        </Link>
+                    </Pressable>
+                )}
                 {!data?.me && (
                     <Pressable>
                         <Link to="/signIn">
