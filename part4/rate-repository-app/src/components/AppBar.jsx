@@ -47,20 +47,33 @@ const AppBar = () => {
                         </Text>
                     </Link>
                 </Pressable>
-                <Pressable>
-                    <Link to="/repository/review">
-                        <Text fontSize="subheading" style={styles.text}>
-                            Create a review
-                        </Text>
-                    </Link>
-                </Pressable>
-                <Pressable>
-                    <Link to="/signIn">
-                        <Text fontSize="subheading" style={styles.text}>
-                            Sign in
-                        </Text>
-                    </Link>
-                </Pressable>
+                {data?.me && (
+                    <Pressable>
+                        <Link to="/repository/review">
+                            <Text fontSize="subheading" style={styles.text}>
+                                Create a review
+                            </Text>
+                        </Link>
+                    </Pressable>
+                )}
+                {!data?.me && (
+                    <Pressable>
+                        <Link to="/signIn">
+                            <Text fontSize="subheading" style={styles.text}>
+                                Sign in
+                            </Text>
+                        </Link>
+                    </Pressable>
+                )}
+                {!data?.me && (
+                    <Pressable>
+                        <Link to="/signUp">
+                            <Text fontSize="subheading" style={styles.text}>
+                                Sign up
+                            </Text>
+                        </Link>
+                    </Pressable>
+                )}
                 {data?.me && (
                     <Pressable onPress={handleSignOut}>
                         <Text fontSize="subheading" style={styles.text}>
