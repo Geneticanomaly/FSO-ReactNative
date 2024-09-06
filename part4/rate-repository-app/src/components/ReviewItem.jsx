@@ -45,7 +45,7 @@ const ReviewItem = ({ review, isMyReviews, refetch }) => {
                     </Text>
                 </View>
                 <View style={styles.columnFlexbox}>
-                    <Text style={{ fontWeight: 'bold' }}>{review.user.username}</Text>
+                    <Text style={{ fontWeight: 'bold' }}>{review.repository.fullName}</Text>
                     <Text style={{ color: theme.colors.textSecondary }}>{convertedDate}</Text>
                 </View>
             </View>
