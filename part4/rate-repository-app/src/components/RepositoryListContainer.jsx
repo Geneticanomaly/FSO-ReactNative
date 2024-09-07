@@ -3,14 +3,6 @@ import RepositoryItem from './RepositoryItem';
 import { useNavigate } from 'react-router-native';
 import MenuComponent from './MenuComponent';
 
-const styles = StyleSheet.create({
-    separator: {
-        height: 10,
-    },
-});
-
-const ItemSeparator = () => <View style={styles.separator} />;
-
 const RepositoryListContainer = ({ repositories, selectedItem, setSelectedItem, keyword, setKeyword }) => {
     const navigate = useNavigate();
 
@@ -21,10 +13,9 @@ const RepositoryListContainer = ({ repositories, selectedItem, setSelectedItem, 
     };
 
     return (
-        <View>
+        <View style={{ flex: 1 }}>
             <FlatList
                 data={repositoryNodes}
-                ItemSeparatorComponent={ItemSeparator}
                 ListHeaderComponent={
                     <MenuComponent
                         selectedItem={selectedItem}

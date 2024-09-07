@@ -82,10 +82,10 @@ export default RepositoryItem;
 const styles = StyleSheet.create({
     container: {
         paddingTop: 10,
+        marginBottom: 10,
         backgroundColor: 'white',
         gap: 10,
         width: '100%',
-        marginBottom: 10,
     },
     header: {
         paddingLeft: 15,
